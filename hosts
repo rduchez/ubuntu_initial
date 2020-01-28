@@ -1,0 +1,3 @@
+[app-servers]
+
+new_app_server ansible_host=10.42.0.9
