@@ -1,3 +1,8 @@
 [app-servers]
 
 new_app_server ansible_host=10.42.0.9
+
+[all:vars]
+ansible_connection=ssh
+ansible_user=romain
+ansible_password=password
