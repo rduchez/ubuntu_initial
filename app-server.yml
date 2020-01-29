@@ -8,3 +8,16 @@
   tasks:
     - name: install docker
       apt: name=docker.io state=present update_cache=yes
+
+    - name: install pip
+      apt: name=python-pip state=present update_cache=yes
+
+    - name: intall docker-py
+      pip:
+        name: docker-py
+
+    - name: start dvwa
+      docker_container:
+        name: "damn_vulnerable"
+        image: infoslack/dvwa
+        published_ports: 80:80
