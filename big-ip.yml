@@ -5,7 +5,7 @@
     - name: Import APM Policy
       bigip_apm_policy_import:
         name: simple-policy
-        source: ./artifact/profile_Common_simple_policy.tar.gz
+        source: /home/romain/ansible-playbooks/artifact/profile_Common_simple_policy.conf.tar.gz
         type: access_policy
         provider: 
           server: big-ip-01
