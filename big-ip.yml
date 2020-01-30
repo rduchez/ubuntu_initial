@@ -1,0 +1,15 @@
+---
+- hosts: big-ip
+  connection: local
+  tasks:
+    - name: Import APM Policy
+      bigip_apm_policy_import:
+        name: simple-policy
+        source: ./artifact/profile_Common_simple_policy.tar.gz
+        type: access_policy
+        provider: 
+          server: big-ip-01
+          user: admin
+          password: admin
+          validate_certs: no
+      delegate_to: localhost
