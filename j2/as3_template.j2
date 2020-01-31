@@ -1,12 +1,16 @@
 "web_app": {
     "class": "Application",
-    "template": "http",
+    "template": "https",
     "serviceMain": {
-        "class": "Service_HTTP",
+        "class": "Service_HTTPS",
         "virtualAddresses": [
             "{{private_ip}}"
         ],
-        "pool": "app_pool"
+        "profileAccess": {
+             "bigip": "/Common/simple-policy"
+         },
+        "pool": "app_pool",
+        "serverTLS": "webtls"
     },
     "app_pool": {
         "class": "Pool",
@@ -21,5 +25,23 @@
                 ]
             }
         ]
+    },
+    "Certificate": {
+        "certificate": {
+            "bigip": "/Common/default.crt"
+        },
+        "privateKey": {
+            "bigip": "/Common/default.key"
+        },
+        "class": "Certificate"
+    },
+    "webtls": {
+      "certificates": [
+          {
+            "certificates": "Certificate"
+          }
+      ],   
+      "class": "TLS_Server"
     }
+      
 }

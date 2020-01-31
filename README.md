@@ -12,3 +12,6 @@ note that this works with a rather ancient version ansible (2.5) and may need re
 
 https://github.com/ansible/workshops/tree/master/exercises/ansible_f5/3.2-as3-delete
  for more information
+
+https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/latest/declarations/access-related.html#referencing-existing-access-and-connectivity-profiles  
+for access policy insertion w/as3
