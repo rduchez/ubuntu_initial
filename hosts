@@ -6,6 +6,7 @@ new_app_server ansible_host=10.42.0.9
 ansible_connection=ssh
 ansible_user=romain
 ansible_password=password
+ansible_sudo_pass=password
 
 [big-ip]
 
