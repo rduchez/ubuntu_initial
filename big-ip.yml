@@ -1,5 +1,5 @@
 ---
-- hosts: big-ip
+- hosts: big-ip-01
   connection: local
   tasks:
     - name: Import APM Policy
@@ -8,8 +8,8 @@
         source: /home/romain/ansible-playbooks/artifact/profile_Common_simple_policy.conf.tar.gz
         type: access_policy
         provider: 
-          server: big-ip-01
-          user: admin
-          password: admin
+          server: "{{ ansible_host }}"
+          user: "{{ bigip_user }}"
+          password: "{{ bigip_password }}"
           validate_certs: no
       delegate_to: localhost

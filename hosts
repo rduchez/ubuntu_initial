@@ -9,4 +9,4 @@ ansible_password=password
 
 [big-ip]
 
-big-ip-01 ansible_host=10.42.0.242
+big-ip-01 ansible_host=10.42.0.242 bigip_password=admin bigip_user=admin private_ip=172.18.0.179 pool_member=172.18.0.9

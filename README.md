@@ -9,3 +9,6 @@ Playbook does the following:
 
 
 note that this works with a rather ancient version ansible (2.5) and may need rework
+
+https://github.com/ansible/workshops/tree/master/exercises/ansible_f5/3.2-as3-delete
+ for more information

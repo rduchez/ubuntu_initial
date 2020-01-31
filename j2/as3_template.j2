@@ -1,0 +1,25 @@
+"web_app": {
+    "class": "Application",
+    "template": "http",
+    "serviceMain": {
+        "class": "Service_HTTP",
+        "virtualAddresses": [
+            "{{private_ip}}"
+        ],
+        "pool": "app_pool"
+    },
+    "app_pool": {
+        "class": "Pool",
+        "monitors": [
+            "tcp"
+        ],
+        "members": [
+            {
+                "servicePort": 80,
+                "serverAddresses": [
+		    "{{pool_member}}"
+                ]
+            }
+        ]
+    }
+}
